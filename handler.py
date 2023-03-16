@@ -1,5 +1,7 @@
+import asyncio
 import json
 import os
+from main import bot
 
 confirmation_code = os.environ.get('VK_CONFIRMATION_CODE')
 
@@ -14,7 +16,7 @@ def handler(event, _):
             'body': confirmation_code,
         }
     else:
-        print("Новое сообщение")
+        asyncio.run(bot.process_event(data))
         return {
             'statusCode': 200,
             'body': '!',
