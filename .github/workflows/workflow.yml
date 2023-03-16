@@ -16,5 +16,5 @@ jobs:
         runtime: 'python311'
         memory: '128'
         entrypoint: 'handler.handler'
-        environment: VK_TOKEN=${{ secrets.VK_TOKEN }}
+        environment: VK_TOKEN=${{ secrets.VK_TOKEN }},VK_CONFIRMATION_CODE=${{ secrets.VK_CONFIRMATION_CODE }}
         source: '.'
